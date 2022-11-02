@@ -1,0 +1,28 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap:5px;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    
+}
+
+.grid-item {
+    height:25px;
+    width:25px;
+    margin:10px;
+}
+
+.on {
+    background-color: red;
+}
+
+.off {
+    background-color: pink;
+}
+
+.inactive {
+    background-color: grey;
+}
