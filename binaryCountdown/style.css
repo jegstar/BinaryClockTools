@@ -29,11 +29,13 @@ html, body {
 }
 
 .on {
-    background-color: #74EE15;
+    background-color: #18ece5;
+    box-shadow: 0px 0px 5px 2px#18ece5;
 }
 
 .off {
-    background-color: #25480a;
+    background-color: rgb(20, 62, 61);
+    box-shadow: 0px 0px 5px 2px rgb(20,62,61);
 }
 
 .inactive {
