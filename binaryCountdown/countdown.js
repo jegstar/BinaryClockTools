@@ -1,4 +1,4 @@
-let seconds = 10;
+let seconds = 15;
 let intervalId;
 
 const startCountdown = (time) => {
@@ -8,20 +8,32 @@ const startCountdown = (time) => {
 }
 
 const update = (time) => {
-    showBinary(seconds)
-    seconds = seconds - 1
     if (seconds == -1) {
         document.getElementById("0").classList.add('inactive')
         clearInterval(intervalId)
+        resetBlocks()
     }
+    else {
+
+        showBinary(seconds)
+        seconds = seconds - 1
+    }
+}
+
+const resetBlocks = () => {
+    const items = document.getElementsByClassName("binary-block")
+    console.log(items)
+    Array.prototype.forEach.call(items, (element => {
+        console.log(element)
+        element.classList = "inactive binary-block"
+    }));
 }
 
 const showBinary = (seconds) => {
     const binString = seconds.toString(2).split("").reverse().join("")
     for (let i = 0; i < binString.length; i ++) {
         const item = document.getElementById(i);
-        //item.innerText = binString.charAt(i)
-        item.classList.remove("inactive")
+        item.innerText = binString.charAt(i)
         if (binString.charAt(i) == 1)
         {
             item.classList.remove("off")
@@ -49,7 +61,6 @@ const createDivs = () => {
     {
         const item = document.createElement('div')
         item.classList.add("grid-item")
-        item.classList.add("inactive")
         item.id = i
         //item.innerText = i
         grid.appendChild(item)
@@ -59,4 +70,5 @@ const createDivs = () => {
 }
 
 createDivs()
+resetBlocks()
 startCountdown()

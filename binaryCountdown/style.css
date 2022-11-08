@@ -23,7 +23,7 @@ html, body {
     height:100%;
 }
 
-.grid-item {
+.binary-block {
     aspect-ratio: 1;
     margin:10px;
 }
