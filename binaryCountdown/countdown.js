@@ -1,22 +1,24 @@
-let seconds=0;
+let timer=0;
 let intervalId;
 
 const startCountdown = (time) => {
+    timer = time
+    update(time)
     if (!intervalId) {
         intervalId = setInterval(update, 1000, time)
     }
 }
 
 const update = (time) => {
-    if (seconds == -1) {
+    if (timer == -1) {
         document.getElementById("0").classList.add('inactive')
         clearInterval(intervalId)
         resetBlocks()
     }
     else {
 
-        showBinary(seconds)
-        seconds = seconds - 1
+        showBinary(timer)
+        timer = timer - 1
     }
 }
 
@@ -74,10 +76,11 @@ const createDivs = () => {
 const onLoad = () => {
     createDivs();
     resetBlocks();
-    const startTimer = document.querySelector(".start-timer");
-    seconds = document.getElementById('seconds')
-    //startTimer.addEventListener("click", startCountdown(seconds))
-    update(10)
+    const startTimer = document.getElementById("start-timer");
+    startTimer.addEventListener("click", () => {
+        const seconds = document.getElementById('seconds').value
+        startCountdown(seconds)
+    })
 }
 
 onLoad()
