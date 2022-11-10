@@ -1,4 +1,4 @@
-let seconds = 10;
+let seconds=0;
 let intervalId;
 
 const startCountdown = (time) => {
@@ -24,7 +24,6 @@ const resetBlocks = () => {
     const items = document.getElementsByClassName("binary-block")
     console.log(items)
     Array.prototype.forEach.call(items, (element => {
-        console.log(element)
         element.classList = "inactive binary-block"
     }));
 }
@@ -70,6 +69,15 @@ const createDivs = () => {
     return divs
 }
 
-createDivs()
-resetBlocks()
-startCountdown()
+
+
+const onLoad = () => {
+    createDivs();
+    resetBlocks();
+    const startTimer = document.querySelector(".start-timer");
+    seconds = document.getElementById('seconds')
+    //startTimer.addEventListener("click", startCountdown(seconds))
+    update(10)
+}
+
+onLoad()
