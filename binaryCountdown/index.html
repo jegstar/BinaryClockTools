@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,31 @@
     <title>Binary Countdown Timer</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="main-content">
-    <div class="dropdown">
-        <button class="dropbtn"></button>
-        
-        <div class="dropdown-content">
-            <label for="Seconds">Seconds</label>
-            <input type="number" name="seconds" id="seconds" placeholder="seconds">
-            <button id="start-timer">Start</button>
+        <div class="dropdown">
+            <button class="dropbtn"></button>
+
+            <div class="dropdown-content">
+                <label for="Seconds">Seconds</label>
+                <div class="input-container">
+                    <div class="input-item">
+                        <input type="number" name="minutes" id="minutes" placeholder="minutes" value="0">
+                    </div>
+                    <div class="input-item">
+                        <input type="number" name="seconds" id="seconds" placeholder="seconds" value="0">
+                    </div>
+                        <button id="start-timer">Start</button>
+                </div>
+            </div>
+        </div>
+        <div class="countdown-container">
+            <div class="grid-container">
+            </div>
         </div>
     </div>
-    <div class="countdown-container">
-        <div class="grid-container">
-        </div>
-    </div>
-</div>
 </body>
 <script src="countdown.js"></script>
+
 </html>
