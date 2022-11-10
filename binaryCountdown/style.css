@@ -41,3 +41,41 @@ html, body {
 .inactive {
     background-color: rgb(79, 79, 79);
 }
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    min-height: 5em;
+}
+
+.dropbtn {
+    min-width: 4em;
+    min-height: 1em;
+}
+
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+.dropdown:hover {
+
+    justify-content:space-between;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    z-index: 1;
+    padding: 1em;
+    background-color: #2f254d;
+}
